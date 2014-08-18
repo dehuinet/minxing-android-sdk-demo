@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+    <plugin>
+        <id>1</id>
+        <action>com.minxing.demo.crm</action>
+        <name>CRM</name>
+        <type>1</type>
+        <icon>custom_item_icon_crm</icon>
+    </plugin>
+</plugins>

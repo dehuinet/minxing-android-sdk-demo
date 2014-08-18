@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="custom_items_name">
+        <item>CRM</item>
+        <item>OA</item>
+    </string-array>
+
+    <integer-array name="custom_items_value">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+    
+     <array name="custom_items_icon">
+        <item>@drawable/custom_item_icon_crm</item>
+        <item>@drawable/custom_item_icon_oa</item>
+    </array>
+</resources>
