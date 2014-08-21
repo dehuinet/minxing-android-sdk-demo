@@ -24,59 +24,10 @@ public class CRMActivity extends Activity {
 	}
 
 	private void initView() {
-		LinearLayout mutiConversationBtn = (LinearLayout) findViewById(R.id.muti_conversation);
-		LinearLayout singleConversationBtn = (LinearLayout) findViewById(R.id.single_conversation);
-		TextView crmContact1 = (TextView) findViewById(R.id.crm_contact_1);
-		TextView crmContact2 = (TextView) findViewById(R.id.crm_contact_2);
-		TextView crmContact3 = (TextView) findViewById(R.id.crm_contact_3);
+
 		setupActionBar();
 
-		singleConversationBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				//聊天人员ID数组不包括本人
-				String[] persons = new String[] { "45" };
-				//调用接口发起聊天
-				AgileManager.getInstance().startConversation(CRMActivity.this, persons);
-			}
-		});
-
-		mutiConversationBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				String[] persons = new String[] { "55", "4" };
-				AgileManager.getInstance().startConversation(CRMActivity.this, persons);
-			}
-		});
-
-		crmContact1.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// 用户ID
-				String memberId = "45";
-				// 调用API进入查看人员详细信息界面
-				AgileManager.getInstance().viewMemberDetail(CRMActivity.this, memberId);
-			}
-		});
-		crmContact2.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				String memberId = "55";
-				AgileManager.getInstance().viewMemberDetail(CRMActivity.this, memberId);
-			}
-		});
-		crmContact3.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				String memberId = "4";
-				AgileManager.getInstance().viewMemberDetail(CRMActivity.this, memberId);
-			}
-		});
+		
 
 	}
 
