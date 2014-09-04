@@ -32,10 +32,10 @@ public class CRMActivity extends Activity {
 	}
 
 	private void setupActionBar() {
-		ActionBar actionBar = getActionBar();
+	/*	ActionBar actionBar = getActionBar();
 		actionBar.setTitle("商机");
 		actionBar.setIcon(R.drawable.back);
-		actionBar.setHomeButtonEnabled(true);
+		actionBar.setHomeButtonEnabled(true);*/
 	}
 
 	@Override

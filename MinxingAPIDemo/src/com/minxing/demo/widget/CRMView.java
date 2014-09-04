@@ -43,7 +43,7 @@ public class CRMView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					//聊天人员ID数组不包括本人
-					String[] persons = new String[] { "133" };
+					String[] persons = new String[] { "58_0006" };
 					//调用接口发起聊天
 					AgileManager.getInstance().startConversation(getContext(), persons);
 				}
@@ -53,7 +53,7 @@ public class CRMView extends FrameLayout{
 
 				@Override
 				public void onClick(View v) {
-					String[] persons = new String[] { "135", "134" };
+					String[] persons = new String[] { "58_0007", "58_0008" };
 					AgileManager.getInstance().startConversation(getContext(), persons);
 				}
 			});
@@ -63,7 +63,7 @@ public class CRMView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					// 用户ID
-					String memberId = "140";
+					String memberId = "58_0006";
 					// 调用API进入查看人员详细信息界面
 					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
 				}
@@ -72,7 +72,7 @@ public class CRMView extends FrameLayout{
 
 				@Override
 				public void onClick(View v) {
-					String memberId = "141";
+					String memberId = "58_0007";
 					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
 				}
 			});
@@ -80,7 +80,7 @@ public class CRMView extends FrameLayout{
 
 				@Override
 				public void onClick(View v) {
-					String memberId = "142";
+					String memberId = "58_0008";
 					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
 				}
 			});

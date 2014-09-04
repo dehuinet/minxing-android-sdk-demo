@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ff7894a3"
-            android:text="朱森成"/>
+            android:text="鲍勇健"/>
          <LinearLayout 
             android:id="@+id/single_conversation"
             android:layout_width="35dip"
@@ -70,13 +70,13 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dip"
             android:textColor="#ff7894a3"
-            android:text="刘建树"/>
+            android:text="丁立波"/>
         <TextView 
             android:id="@+id/crm_contact_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ff7894a3"
-            android:text="丁立波"/>
+            android:text="刘华"/>
         <LinearLayout 
             android:id="@+id/muti_conversation"
             android:layout_width="35dip"
