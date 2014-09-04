@@ -1,0 +1,17 @@
+# built application files
+.DS_Store
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+MinxingAPI/.settings/org.eclipse.core.resources.prefs
+MinxingAPIDemo/.settings/org.eclipse.core.resources.prefs
