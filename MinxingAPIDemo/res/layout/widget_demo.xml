@@ -10,23 +10,8 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="10dip"
         android:textSize="@dimen/list_item_header_text_size"
-        android:text="商机主题:中国移动OA改造"/>
-    <LinearLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            style="@style/list_item_text_left"
-            android:text="客户:"/>
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="中国移动"/>
-        
-    </LinearLayout>
+        android:text="敏行项目集成示例界面"/>
+
     <LinearLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,13 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/list_item_text_left"
-            android:text="联系人:"/>
+            android:text="成员(可单聊):"/>
         <TextView 
             android:id="@+id/crm_contact_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ff7894a3"
-            android:text="鲍勇健"/>
+            android:text="刘春山"/>
          <LinearLayout 
             android:id="@+id/single_conversation"
             android:layout_width="35dip"
@@ -63,20 +48,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/list_item_text_left"
-            android:text="负责人:"/>
+            android:text="成员(可群聊):"/>
         <TextView 
             android:id="@+id/crm_contact_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dip"
             android:textColor="#ff7894a3"
-            android:text="丁立波"/>
+            android:text="高鹏"/>
         <TextView 
             android:id="@+id/crm_contact_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ff7894a3"
-            android:text="刘华"/>
+            android:text="马晨"/>
         <LinearLayout 
             android:id="@+id/muti_conversation"
             android:layout_width="35dip"
@@ -90,5 +75,10 @@
         </LinearLayout>
         
     </LinearLayout>
+    <Button 
+        android:id="@+id/demo_forward"
+            android:layout_width="35dip"
+            android:layout_height="25dip"
+            android:text="转发"/>
 
 </LinearLayout>
