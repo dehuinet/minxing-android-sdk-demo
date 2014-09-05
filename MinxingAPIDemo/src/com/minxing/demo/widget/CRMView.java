@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.minxing.api.AgileManager;
+import com.minxing.demo.CRMActivity;
 import com.minxing.demo.R;
 
 public class CRMView extends FrameLayout{
@@ -86,7 +87,5 @@ public class CRMView extends FrameLayout{
 			});
 			addView(root);
 		}
-
-		
 
 }

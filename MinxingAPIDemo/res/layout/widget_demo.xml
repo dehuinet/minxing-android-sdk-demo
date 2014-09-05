@@ -75,5 +75,10 @@
         </LinearLayout>
         
     </LinearLayout>
+    <Button 
+        android:id="@+id/demo_forward"
+            android:layout_width="35dip"
+            android:layout_height="25dip"
+            android:text="转发"/>
 
 </LinearLayout>
