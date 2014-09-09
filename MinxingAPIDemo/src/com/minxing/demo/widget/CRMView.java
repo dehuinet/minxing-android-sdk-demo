@@ -9,8 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.minxing.api.AgileManager;
-import com.minxing.demo.CRMActivity;
+import com.minxing.api.MXEngine;
 import com.minxing.demo.R;
 
 public class CRMView extends FrameLayout{
@@ -46,7 +45,7 @@ public class CRMView extends FrameLayout{
 					//聊天人员ID数组不包括本人
 					String[] persons = new String[] { "58_0006" };
 					//调用接口发起聊天
-					AgileManager.getInstance().startConversation(getContext(), persons);
+					MXEngine.getInstance().chat(getContext(), persons);
 				}
 			});
 
@@ -55,7 +54,7 @@ public class CRMView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String[] persons = new String[] { "58_0007", "58_0008" };
-					AgileManager.getInstance().startConversation(getContext(), persons);
+					MXEngine.getInstance().chat(getContext(), persons);
 				}
 			});
 
@@ -66,7 +65,7 @@ public class CRMView extends FrameLayout{
 					// 用户ID
 					String memberId = "58_0006";
 					// 调用API进入查看人员详细信息界面
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			crmContact2.setOnClickListener(new OnClickListener() {
@@ -74,7 +73,7 @@ public class CRMView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "58_0007";
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			crmContact3.setOnClickListener(new OnClickListener() {
@@ -82,7 +81,7 @@ public class CRMView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "58_0008";
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			addView(root);

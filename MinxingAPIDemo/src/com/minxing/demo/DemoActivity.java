@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.minxing.api.AgileManager;
-
 public class DemoActivity extends Activity {
 
 	@Override
@@ -45,15 +43,15 @@ public class DemoActivity extends Activity {
 		if (item.getItemId() == android.R.id.home) {
 			finish();
 		} else if (item.getItemId() == R.id.menu_forward) {
-			forwardToOthers();
+//			forwardToOthers();
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void forwardToOthers() {
+/*	private void forwardToOthers() {
 		//转发到工作圈,参数为标题和默认内容
 		AgileManager.getInstance().sendToCircle(DemoActivity.this, "分享", "测试转发到工作圈");
 
-	}
+	}*/
 
 }

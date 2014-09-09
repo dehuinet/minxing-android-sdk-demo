@@ -16,3 +16,4 @@ gen/
 MinxingAPI/.settings/org.eclipse.core.resources.prefs
 MinxingAPIDemo/.settings/org.eclipse.core.resources.prefs
 *.jar
+*.jar

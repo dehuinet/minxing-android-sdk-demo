@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.minxing.api.AgileManager;
+import com.minxing.api.MXEngine;
 import com.minxing.demo.R;
 
 public class DemoView extends FrameLayout{
@@ -48,7 +48,7 @@ public class DemoView extends FrameLayout{
 					//聊天人员ID数组不包括本人
 					String[] persons = new String[] { "p_100" };
 					//调用接口发起聊天
-					AgileManager.getInstance().startConversation(getContext(), persons);
+					MXEngine.getInstance().chat(getContext(), persons);
 				}
 			});
 
@@ -57,7 +57,7 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String[] persons = new String[] { "p_101", "p_102" };
-					AgileManager.getInstance().startConversation(getContext(), persons);
+					MXEngine.getInstance().chat(getContext(), persons);
 				}
 			});
 
@@ -68,7 +68,7 @@ public class DemoView extends FrameLayout{
 					// 用户ID
 					String memberId = "p_100";
 					// 调用API进入查看人员详细信息界面
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			crmContact2.setOnClickListener(new OnClickListener() {
@@ -76,7 +76,7 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "p_101";
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			crmContact3.setOnClickListener(new OnClickListener() {
@@ -84,7 +84,7 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "p_102";
-					AgileManager.getInstance().viewMemberDetail(getContext(), memberId);
+					MXEngine.getInstance().personInfo(getContext(), memberId);
 				}
 			});
 			
@@ -102,7 +102,7 @@ public class DemoView extends FrameLayout{
 		
 		private void forwardToOthers() {
 			//转发到工作圈,参数为标题和默认内容
-			AgileManager.getInstance().sendToCircle(getContext(), "分享", "测试转发到工作圈");
+			MXEngine.getInstance().share(getContext(), "分享", "测试转发到工作圈");
 
 		}
 }
