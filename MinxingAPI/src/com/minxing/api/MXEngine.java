@@ -42,8 +42,8 @@ public class MXEngine {
 		}
 	};
 
-	public void chat(String loginNames) {
-		if (loginNames == null || "".equals(loginNames)) {
+	public void chat(String[] loginNames) {
+		if (loginNames == null || loginNames.length == 0) {
 			return;
 		}
 
@@ -59,7 +59,15 @@ public class MXEngine {
 				// mInterfaceService.unregisterCallback(this);
 				// }
 				// });
-				mInterfaceService.chat(loginNames);
+				StringBuilder sb = new StringBuilder();
+				for (int i = 0; i < loginNames.length; i++) {
+					sb.append(loginNames[i]).append(",");
+				}
+				String resultString = sb.toString();
+				if (resultString.indexOf(",") != -1) {
+					resultString = resultString.substring(0, resultString.length() - 1);
+				}
+				mInterfaceService.chat(resultString);
 			} catch (RemoteException e) {
 				e.printStackTrace();
 			}
