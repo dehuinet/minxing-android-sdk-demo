@@ -1,7 +1,7 @@
 package com.minxing.api.internal;
 
 public class APIConstant {
-	public static final String INTENT_ACTION = "com.minxing.plugin";
+	public static final String INTERFACE_SERVICE_ACTION = "com.minxing.plugin.interface.service";
 
 	public static class IntentType {
 		public static final String OPERATION = "OPERATION";

@@ -46,9 +46,9 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					//聊天人员ID数组不包括本人
-					String[] persons = new String[] { "p_100" };
+					String persons = "p_100";
 					//调用接口发起聊天
-					MXEngine.getInstance().chat(getContext(), persons);
+					MXEngine.getInstance().chat(persons);
 				}
 			});
 
@@ -56,8 +56,8 @@ public class DemoView extends FrameLayout{
 
 				@Override
 				public void onClick(View v) {
-					String[] persons = new String[] { "p_101", "p_102" };
-					MXEngine.getInstance().chat(getContext(), persons);
+					String persons = "p_101,p_102";
+					MXEngine.getInstance().chat(persons);
 				}
 			});
 
@@ -68,7 +68,7 @@ public class DemoView extends FrameLayout{
 					// 用户ID
 					String memberId = "p_100";
 					// 调用API进入查看人员详细信息界面
-					MXEngine.getInstance().personInfo(getContext(), memberId);
+					MXEngine.getInstance().viewPersonInfo(memberId);
 				}
 			});
 			crmContact2.setOnClickListener(new OnClickListener() {
@@ -76,7 +76,7 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "p_101";
-					MXEngine.getInstance().personInfo(getContext(), memberId);
+					MXEngine.getInstance().viewPersonInfo(memberId);
 				}
 			});
 			crmContact3.setOnClickListener(new OnClickListener() {
@@ -84,7 +84,7 @@ public class DemoView extends FrameLayout{
 				@Override
 				public void onClick(View v) {
 					String memberId = "p_102";
-					MXEngine.getInstance().personInfo(getContext(), memberId);
+					MXEngine.getInstance().viewPersonInfo(memberId);
 				}
 			});
 			

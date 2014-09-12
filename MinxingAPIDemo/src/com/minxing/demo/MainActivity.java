@@ -1,5 +1,7 @@
 package com.minxing.demo;
 
+import com.minxing.api.MXEngine;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initView();
+		MXEngine.getInstance().init(this);
 	}
 
 	private void initView() {
@@ -26,7 +29,6 @@ public class MainActivity extends Activity {
 				//进入CRM界面
 				Intent intent = new Intent(MainActivity.this, CRMActivity.class);
 				startActivity(intent);
-				
 			}
 		});
 
