@@ -45,22 +45,23 @@ public class CRMView extends FrameLayout {
 			@Override
 			public void onClick(View v) {
 				// 聊天人员ID数组不包括本人
-				String persons = "58_0006";
+				String[] persons = new String[] { "58_0006" };
 				// 调用接口发起聊天
 				MXEngine.getInstance().chat(persons);
-//				MXEngine.getInstance().test(new IResultCallback() {
-//
-//					@Override
-//					public void sendResult(final String result) {
-//						((Activity) getContext()).runOnUiThread(new Runnable() {
-//							@Override
-//							public void run() {
-//								Toast.makeText(getContext(), result + ">>>>>>>>" + count, Toast.LENGTH_LONG).show();
-//								count++;
-//							}
-//						});
-//					}
-//				});
+				// MXEngine.getInstance().test(new IResultCallback() {
+				//
+				// @Override
+				// public void sendResult(final String result) {
+				// ((Activity) getContext()).runOnUiThread(new Runnable() {
+				// @Override
+				// public void run() {
+				// Toast.makeText(getContext(), result + ">>>>>>>>" + count,
+				// Toast.LENGTH_LONG).show();
+				// count++;
+				// }
+				// });
+				// }
+				// });
 			}
 		});
 
@@ -68,7 +69,7 @@ public class CRMView extends FrameLayout {
 
 			@Override
 			public void onClick(View v) {
-				String persons =  "58_0007,58_0008";
+				String[] persons = new String[] { "58_0007", "58_0008" };
 				MXEngine.getInstance().chat(persons);
 			}
 		});
