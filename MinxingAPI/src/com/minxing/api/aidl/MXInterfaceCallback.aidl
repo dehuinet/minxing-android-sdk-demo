@@ -1,4 +1,4 @@
 package com.minxing.api.aidl;
 interface MXInterfaceCallback{
-	void sendResult(String result);
+	void onResult(String result);
 }

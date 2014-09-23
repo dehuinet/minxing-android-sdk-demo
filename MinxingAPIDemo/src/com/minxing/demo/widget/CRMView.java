@@ -1,5 +1,6 @@
 package com.minxing.demo.widget;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -10,22 +11,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.minxing.api.MXEngine;
+import com.minxing.api.MXEngineCallback;
 import com.minxing.demo.R;
 
 public class CRMView extends FrameLayout {
+	
+	private Context context;
 
 	public CRMView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		this.context = context;
 		initView();
 	}
 
 	public CRMView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		this.context = context;
 		initView();
 	}
 
 	public CRMView(Context context) {
 		super(context);
+		this.context = context;
 		initView();
 	}
 
@@ -38,6 +45,7 @@ public class CRMView extends FrameLayout {
 		TextView crmContact1 = (TextView) root.findViewById(R.id.crm_contact_1);
 		TextView crmContact2 = (TextView) root.findViewById(R.id.crm_contact_2);
 		TextView crmContact3 = (TextView) root.findViewById(R.id.crm_contact_3);
+		final TextView callback_result = (TextView) root.findViewById(R.id.callback_result);
 		// setupActionBar();
 
 		singleConversationBtn.setOnClickListener(new OnClickListener() {
@@ -89,18 +97,41 @@ public class CRMView extends FrameLayout {
 			@Override
 			public void onClick(View v) {
 				String memberId = "58_0007";
-				MXEngine.getInstance().viewPersonInfo(memberId);
+//				MXEngine.getInstance().viewPersonInfo(memberId);
+				
+				MXEngine.getInstance().personInfo(memberId, new MXEngineCallback() {
+					
+					@Override
+					public void onResult(final String result) {
+						((Activity)context).runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								callback_result.setText(result);
+							}
+						});
+					}
+				});
 			}
 		});
 		crmContact3.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				String memberId = "58_0008";
-				MXEngine.getInstance().viewPersonInfo(memberId);
+//				String memberId = "58_0008";
+//				MXEngine.getInstance().viewPersonInfo(memberId);
+				MXEngine.getInstance().selectUser(context, true, new MXEngineCallback() {
+					@Override
+					public void onResult(final String result) {
+						((Activity)context).runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								callback_result.setText(result);
+							}
+						});
+					}
+				});
 			}
 		});
 		addView(root);
 	}
-
 }
