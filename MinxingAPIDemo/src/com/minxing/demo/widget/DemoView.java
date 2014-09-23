@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,7 +36,7 @@ public class DemoView extends FrameLayout {
 		TextView crmContact1 = (TextView) root.findViewById(R.id.crm_contact_1);
 		TextView crmContact2 = (TextView) root.findViewById(R.id.crm_contact_2);
 		TextView crmContact3 = (TextView) root.findViewById(R.id.crm_contact_3);
-		Button forwardBtn = (Button) root.findViewById(R.id.demo_forward);
+//		Button forwardBtn = (Button) root.findViewById(R.id.demo_forward);
 
 		// setupActionBar();
 
@@ -88,20 +87,20 @@ public class DemoView extends FrameLayout {
 			}
 		});
 
-		forwardBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				forwardToOthers();
-			}
-		});
+//		forwardBtn.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				forwardToOthers();
+//			}
+//		});
 
 		addView(root);
 	}
 
-	private void forwardToOthers() {
-		// 转发到工作圈,参数为标题和默认内容
-		MXEngine.getInstance().share(getContext(), "分享", "测试转发到工作圈");
-
-	}
+//	private void forwardToOthers() {
+//		// 转发到工作圈,参数为标题和默认内容
+//		MXEngine.getInstance().share(getContext(), "分享", "测试转发到工作圈");
+//
+//	}
 }

@@ -134,9 +134,10 @@ public class MXEngine {
 						mInterfaceService.unregisterCallback(this);
 					}
 				});
-				Intent intent = new Intent("com.minxing.mxinterface.app2app.blank");
-				intent.putExtra("callbackKey", callbackKey);
-				intent.putExtra("mxinterface_selectuser", isMult);
+				Intent intent = new Intent(APIConstant.APP2APP_BLANK_ACTION);
+				intent.putExtra(APIConstant.IntentValue.APP2APP_TYPE, APIConstant.APP2APPType.APP2APP_TYPE_SELECT_USER);
+				intent.putExtra(APIConstant.IntentValue.CALLBACK_KEY, callbackKey);
+				intent.putExtra(APIConstant.IntentValue.SELECT_USER_ISMULTI, isMult);
 				context.startActivity(intent);
 			} catch (RemoteException e) {
 				e.printStackTrace();
@@ -144,34 +145,137 @@ public class MXEngine {
 		}
 	}
 
-	public void share(Context context, String pageTitle, String... shareParam) {
-		if (shareParam != null) {
-			Intent intent = new Intent();
-			intent.setAction(APIConstant.INTENT_ACTION);
-			intent.putExtra(APIConstant.IntentType.OPERATION, APIConstant.IntentType.OPERATION_TYPE_SHARE);
-			intent.putExtra(APIConstant.IntentValue.SHARE_PAGE_TITLE, pageTitle);
-			switch (shareParam.length) {
-			case 2:
-				if (APIConstant.ShareType.SHARE_TYPE_TEXT.equals(shareParam[0])) {
-					intent.putExtra(APIConstant.IntentValue.SHARE_TEXT_CONTENT, shareParam[1]);
-				} else if (APIConstant.ShareType.SHARE_TYPE_IMAGE.equals(shareParam[0])) {
-					intent.putExtra(APIConstant.IntentValue.SHARE_IMAGE_DATA, shareParam[1]);
-				}
-				intent.putExtra(APIConstant.IntentValue.SHARE_TYPE, shareParam[0]);
-				break;
+	public void shareToChat(Context context, String shareTitle, String shareUrl, String shareThumb, String shareDescription,
+			final MXEngineCallback callback) {
+		if (mInterfaceService != null) {
+			// try {
+			// String callbackKey =
+			// MXCallbackHost.getInstance().putCallback(callback);
+			// if (callbackKey == null) {
+			// return;
+			// }
+			//
+			// mInterfaceService.registerCallback(callbackKey, new
+			// MXInterfaceCallback.Stub() {
+			//
+			// @Override
+			// public void onResult(String result) throws RemoteException {
+			// callback.onResult(result);
+			// mInterfaceService.unregisterCallback(this);
+			// }
+			// });
 
-			case 5:
-				if (APIConstant.ShareType.SHARE_TYPE_GRAPH.equals(shareParam[0])) {
-					intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_TITLE, shareParam[1]);
-					intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_CONTENT, shareParam[2]);
-					intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_THUMBDATA, shareParam[3]);
-					intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_URL, shareParam[4]);
-				}
-				intent.putExtra(APIConstant.IntentValue.SHARE_TYPE, shareParam[0]);
-				break;
-			}
-			context.startService(intent);
+			Intent intent = new Intent(APIConstant.APP2APP_BLANK_ACTION);
+			intent.putExtra(APIConstant.IntentValue.APP2APP_TYPE, APIConstant.APP2APPType.APP2APP_TYPE_SHARE_CONVERSATION);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_TITLE, shareTitle);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_CONTENT, shareDescription);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_THUMBDATA, shareThumb);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_URL, shareUrl);
+			// intent.putExtra(APIConstant.IntentValue.CALLBACK_KEY,
+			// callbackKey);
+			//
+			// switch (shareParam.length) {
+			// case 2:
+			// if (APIConstant.ShareType.SHARE_TYPE_TEXT.equals(shareParam[0]))
+			// {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TEXT_CONTENT,
+			// shareParam[1]);
+			// } else if
+			// (APIConstant.ShareType.SHARE_TYPE_IMAGE.equals(shareParam[0])) {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_IMAGE_DATA,
+			// shareParam[1]);
+			// }
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TYPE,
+			// shareParam[0]);
+			// break;
+			//
+			// case 5:
+			// if (APIConstant.ShareType.SHARE_TYPE_GRAPH.equals(shareParam[0]))
+			// {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_TITLE,
+			// shareParam[1]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_CONTENT,
+			// shareParam[2]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_THUMBDATA,
+			// shareParam[3]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_URL,
+			// shareParam[4]);
+			// }
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TYPE,
+			// shareParam[0]);
+			// break;
+			// }
+			context.startActivity(intent);
+			// } catch (RemoteException e) {
+			// e.printStackTrace();
+			// }
 		}
 	}
 
+	public void shareToCircle(Context context, String shareTitle, String shareUrl, String shareThumb, String shareDescription,
+			final MXEngineCallback callback) {
+		if (mInterfaceService != null) {
+			// try {
+			// String callbackKey =
+			// MXCallbackHost.getInstance().putCallback(callback);
+			// if (callbackKey == null) {
+			// return;
+			// }
+			//
+			// mInterfaceService.registerCallback(callbackKey, new
+			// MXInterfaceCallback.Stub() {
+			//
+			// @Override
+			// public void onResult(String result) throws RemoteException {
+			// callback.onResult(result);
+			// mInterfaceService.unregisterCallback(this);
+			// }
+			// });
+
+			Intent intent = new Intent(APIConstant.APP2APP_BLANK_ACTION);
+			intent.putExtra(APIConstant.IntentValue.APP2APP_TYPE, APIConstant.APP2APPType.APP2APP_TYPE_SHARE_CIRCLE);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_TITLE, shareTitle);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_CONTENT, shareDescription);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_THUMBDATA, shareThumb);
+			intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_URL, shareUrl);
+			// intent.putExtra(APIConstant.IntentValue.CALLBACK_KEY,
+			// callbackKey);
+
+			// switch (shareParam.length) {
+			// case 2:
+			// if (APIConstant.ShareType.SHARE_TYPE_TEXT.equals(shareParam[0]))
+			// {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TEXT_CONTENT,
+			// shareParam[1]);
+			// } else if
+			// (APIConstant.ShareType.SHARE_TYPE_IMAGE.equals(shareParam[0])) {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_IMAGE_DATA,
+			// shareParam[1]);
+			// }
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TYPE,
+			// shareParam[0]);
+			// break;
+			//
+			// case 5:
+			// if (APIConstant.ShareType.SHARE_TYPE_GRAPH.equals(shareParam[0]))
+			// {
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_TITLE,
+			// shareParam[1]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_CONTENT,
+			// shareParam[2]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_THUMBDATA,
+			// shareParam[3]);
+			// intent.putExtra(APIConstant.IntentValue.SHARE_GRAPH_URL,
+			// shareParam[4]);
+			// }
+			// intent.putExtra(APIConstant.IntentValue.SHARE_TYPE,
+			// shareParam[0]);
+			// break;
+			// }
+			context.startActivity(intent);
+			// } catch (RemoteException e) {
+			// e.printStackTrace();
+			// }
+		}
+	}
 }

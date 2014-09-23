@@ -15,7 +15,7 @@ import com.minxing.api.MXEngineCallback;
 import com.minxing.demo.R;
 
 public class CRMView extends FrameLayout {
-	
+
 	private Context context;
 
 	public CRMView(Context context, AttributeSet attrs, int defStyle) {
@@ -46,6 +46,7 @@ public class CRMView extends FrameLayout {
 		TextView crmContact2 = (TextView) root.findViewById(R.id.crm_contact_2);
 		TextView crmContact3 = (TextView) root.findViewById(R.id.crm_contact_3);
 		final TextView callback_result = (TextView) root.findViewById(R.id.callback_result);
+		TextView share_text = (TextView) root.findViewById(R.id.share_text);
 		// setupActionBar();
 
 		singleConversationBtn.setOnClickListener(new OnClickListener() {
@@ -97,13 +98,13 @@ public class CRMView extends FrameLayout {
 			@Override
 			public void onClick(View v) {
 				String memberId = "58_0007";
-//				MXEngine.getInstance().viewPersonInfo(memberId);
-				
+				// MXEngine.getInstance().viewPersonInfo(memberId);
+
 				MXEngine.getInstance().personInfo(memberId, new MXEngineCallback() {
-					
+
 					@Override
 					public void onResult(final String result) {
-						((Activity)context).runOnUiThread(new Runnable() {
+						((Activity) context).runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
 								callback_result.setText(result);
@@ -117,12 +118,12 @@ public class CRMView extends FrameLayout {
 
 			@Override
 			public void onClick(View v) {
-//				String memberId = "58_0008";
-//				MXEngine.getInstance().viewPersonInfo(memberId);
+				// String memberId = "58_0008";
+				// MXEngine.getInstance().viewPersonInfo(memberId);
 				MXEngine.getInstance().selectUser(context, true, new MXEngineCallback() {
 					@Override
 					public void onResult(final String result) {
-						((Activity)context).runOnUiThread(new Runnable() {
+						((Activity) context).runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
 								callback_result.setText(result);
@@ -132,6 +133,16 @@ public class CRMView extends FrameLayout {
 				});
 			}
 		});
+
+		share_text.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+//				MXEngine.getInstance().shareToChat(context, "title", "description", null, "http://www.163.com", null);
+				MXEngine.getInstance().shareToCircle(context, "title", "description", null, "http://www.163.com", null);
+			}
+		});
+
 		addView(root);
 	}
 }
