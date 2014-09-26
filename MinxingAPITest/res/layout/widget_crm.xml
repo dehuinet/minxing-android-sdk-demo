@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/currentUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取当前用户信息"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/view_person_loginname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:hint="输入要查看的用户，只能一个" />
+
+        <Button
+            android:id="@+id/start_view_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/person_loginname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:hint="获取用户数据，只能一个" />
+
+        <Button
+            android:id="@+id/start_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/conversation_loginname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:hint="输入要发起群聊的用户，逗号分隔" />
+
+        <Button
+            android:id="@+id/start_conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/selectUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单选选人"
+            android:textColor="#ff7894a3" />
+        
+        <Button
+            android:id="@+id/selectUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多选选人"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/share_conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享到聊天"
+            android:textColor="#ff7894a3" />
+        
+        <Button
+            android:id="@+id/share_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享到工作圈"
+            android:textColor="#ff7894a3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:id="@+id/callback_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回调数据展示区域" />
+        
+    </LinearLayout>
+</LinearLayout>
