@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="mx_transparent">#00000000</color>
+    <color name="mx_white">@android:color/white</color>
+    <color name="mx_no_color">@android:color/transparent</color>
+    <color name="mx_black">@android:color/black</color>
+    <drawable name="black">#ff000000</drawable>
+</resources>

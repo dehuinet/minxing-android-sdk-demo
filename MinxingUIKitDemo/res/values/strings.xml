@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">敏行Demo</string>
+
+    <string-array name="home_menu_names">
+        <item>群聊</item>
+        <item>智慧圈</item>
+        <item>客户</item>
+        <item>商机</item>
+    </string-array>
+
+</resources>
