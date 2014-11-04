@@ -1,30 +1,32 @@
 package com.minxing.client;
 
+import com.minxing.uikit.contact.ContactView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.minxing.uikit.conversation.ConversationListView;
-import com.minxing.uikit.conversation.ConversationListView.ConversationEventListener;
 
-public class ChatFragment extends BaseFragment{
-	private ConversationListView conversationListView;
+
+
+public class ContactFragment extends BaseFragment{
+	private ContactView contactView;
 	private String[] mMenuNames;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mMenuNames = getResources().getStringArray(R.array.home_menu_names);
-		int a = com.minxing.R.id.title_right_new_function;
 		setHasOptionsMenu(true);
 		
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		conversationListView = new ConversationListView(getActivity());
-		conversationListView.setConversationEventListener(new ConversationEventListener() {
+		contactView = new ContactView(getActivity());
+		contactView.setIntent(getActivity().getIntent());
+		/*contactView.setConversationEventListener(new ConversationEventListener() {
 			
 			@Override
 			public void startActivityForResult(Intent intent, int newMessageRequest) {
@@ -37,8 +39,8 @@ public class ChatFragment extends BaseFragment{
 				getActivity().finish();
 				
 			}
-		});
-		return conversationListView;
+		});*/
+		return contactView;
 		
 	}
 	@Override
@@ -48,7 +50,7 @@ public class ChatFragment extends BaseFragment{
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		conversationListView.onActivityResult(requestCode, resultCode, data);
+//		contactView.onActivityResult(requestCode, resultCode, data);
 		
 	}
 	

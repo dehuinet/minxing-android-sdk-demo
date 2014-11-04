@@ -4,6 +4,8 @@
 
     <string-array name="home_menu_names">
         <item>群聊</item>
+        <item>应用中心</item>
+        <item>通讯录</item>
         <item>智慧圈</item>
         <item>客户</item>
         <item>商机</item>

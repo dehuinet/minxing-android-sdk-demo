@@ -1,35 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tabhost"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    <RelativeLayout
+    <com.minxing.client.tab.MenuTabHost
+        android:id="@android:id/tabhost"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:layout_height="fill_parent" >
 
-        <FrameLayout
-            android:id="@android:id/tabcontent"
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="1" >
-        </FrameLayout>
-        <FrameLayout
-	        android:id="@+id/realtabcontent"
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
-	        android:layout_weight="1">
-	    </FrameLayout>
+            android:orientation="vertical" >
 
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@android:id/tabcontent"
-            android:background="#dddddd"
-            android:tabStripEnabled="false">
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/realtabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@android:id/tabcontent"
+                android:background="@drawable/mx_bg_bottombar"
+                android:tabStripEnabled="false" >
             </TabWidget>
-    </RelativeLayout>
+        </RelativeLayout>
+    </com.minxing.client.tab.MenuTabHost>
 
-</TabHost>
+    <com.minxing.widget.SlidingMenu
+        android:id="@+id/sliding_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/mx_white"
+        android:choiceMode="singleChoice"
+        android:scrollbars="none" >
+    </com.minxing.widget.SlidingMenu>
+
+</android.support.v4.widget.DrawerLayout>

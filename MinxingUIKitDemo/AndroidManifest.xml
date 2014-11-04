@@ -67,6 +67,23 @@
             android:name="com.minxing.client.LaunchActivity"
             android:screenOrientation="portrait"/>
         
+        <activity
+            android:name="com.minxing.kit.activity.MXConversationListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.minxing.kit.activity.MXHomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.minxing.kit.activity.MXAppCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.minxing.kit.activity.MXMainContactActivity"
+            android:screenOrientation="portrait"/>
+        
+        
+        
+        
+        
         
         
         

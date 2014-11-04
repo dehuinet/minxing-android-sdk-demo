@@ -52,5 +52,10 @@ public class CircleFragment extends BaseFragment{
 		circleView.onActivityResult(requestCode, resultCode, data);
 	}
 
+	public void updateGroup(int groupID) {
+		circleView.updateGroup(groupID);
+		
+	}
+
 
 }

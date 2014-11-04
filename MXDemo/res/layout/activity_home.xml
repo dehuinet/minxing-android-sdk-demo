@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:columnCount="2">
+
+        <TextView 
+            android:layout_width="150dip"
+            android:layout_height="100dip"
+            android:gravity="center"
+            android:textSize="30dip"
+            android:background="@drawable/grid_item_selector"
+            android:clickable="true"
+            android:text="选项一" />
+        <TextView 
+            android:layout_width="150dip"
+            android:layout_height="100dip"
+            android:gravity="center"
+            android:textSize="30dip"
+            android:clickable="true"
+            android:background="@drawable/grid_item_selector"
+            android:text="选项二" />
+        <TextView 
+            android:layout_width="150dip"
+            android:layout_height="100dip"
+            android:gravity="center"
+            android:textSize="30dip"
+            android:clickable="true"
+            android:background="@drawable/grid_item_selector"
+            android:text="选项三" />
+        <TextView 
+            android:id="@+id/minxing_launcher"
+            android:layout_width="150dip"
+            android:layout_height="100dip"
+            android:gravity="center"
+            android:textSize="30dip"
+            android:background="@drawable/grid_item_selector"
+            android:clickable="true"
+            android:text="敏行" />
+        
+    </GridLayout>
+    </LinearLayout>
+
