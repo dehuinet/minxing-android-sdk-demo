@@ -40,6 +40,7 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <application
+        android:name="com.minxing.demo.AppApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -66,50 +67,101 @@
         
         
         
-        
-         <activity
-            android:name="com.minxing.SystemLoadingActivity"
+       <activity
+            android:name="com.minxing.client.activity.SystemSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.activity.SystemSettingMessageNotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.activity.SystemSettingDisturbActivitybActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.activity.SystemNewsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+         android:name="com.minxing.client.activity.SystemSettingGesturePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.activity.GesturePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.ClientTabActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.minxing.client.activity.LaunchShareActivity"
             android:configChanges="keyboardHidden|orientation"
+            android:label="发送给朋友"
             android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
         </activity>
         <activity
-            android:name="com.minxing.SystemNewsActivity"
+            android:name="com.minxing.client.activity.LaunchComposeMailActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:launchMode="singleTask"
+            android:icon="@drawable/mail_icon"
+            android:label="@string/mail_box_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SENDTO" />
+
+                <data android:scheme="mailto" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        
+        <receiver android:name="com.minxing.client.receiver.MXKitPushReceiver" >
+            <intent-filter>
+                <action android:name="com.minxing.kit.outside.push.message" />
+            </intent-filter>
+        </receiver>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <activity
+            android:name="com.minxing.kit.ui.chat.MXChatActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.SystemLoginActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity
-            android:name="com.minxing.SystemGesturePasswordActivity"
+            android:name="com.minxing.kit.ui.contacts.MXContactsActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.ui.MXTabActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.ui.TabWorkCircleActivity"
+            android:name="com.minxing.kit.ui.appcenter.MXAppCenterActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.ui.TabAppCenterActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.ui.TabConversationListActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.ui.TabWorkActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.ui.TabContactActivity"
+            android:name="com.minxing.kit.ui.circle.MXCircleActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -117,7 +169,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.contact.ContactQueryByMobile"
+            android:name="com.minxing.kit.internal.contact.ContactQueryByMobileActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -141,7 +193,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.contact.ContactPublicGridActivity"
+            android:name="com.minxing.kit.internal.contact.ContactPublicGridActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -149,7 +201,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.contact.WorkCircleMyFavActivity"
+            android:name="com.minxing.kit.internal.contact.WorkCircleMyFavActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -157,39 +209,15 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.contact.WorkCircleMyFileActivitytivity"
+            android:name="com.minxing.kit.internal.contact.WorkCircleMyFileActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.SystemMeActivity"
+            android:name="com.minxing.kit.internal.common.SystemMeActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.TabMoreActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.SystemSettingDisturbActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.SystemSettingActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.SystemSettingMailConversationActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.SystemSettingMessageNotificationActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.SystemSettingGesturePasswordActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.WorkcircleSettingChangeNameActivity"
+            android:name="com.minxing.kit.internal.circle.WorkcircleSettingChangeNameActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -266,10 +294,6 @@
             android:name="com.minxing.kit.internal.circle.NewMessageShareGraphActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
-        <!-- <activity
-            android:name="com.minxing.NotificationActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" /> -->
         <activity
             android:name="com.minxing.kit.internal.common.DownloadedFileActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -280,15 +304,15 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" />
         <activity
-            android:name="com.minxing.kit.internal.im.ConversationWebViewActivityity"
+            android:name="com.minxing.kit.internal.im.ConversationWebViewActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.im.ImageDetailsActivity"
+            android:name="com.minxing.kit.internal.common.ImageDetailsActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.im.ConversationMessageCameraActivitytivity"
+            android:name="com.minxing.kit.internal.im.ConversationMessageCameraActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -296,20 +320,16 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.im.ConversationSettingActivitytivity"
+            android:name="com.minxing.kit.internal.im.ConversationSettingActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.im.ConversationSettingChangeNameActivityChangeNameActivity"
+            android:name="com.minxing.kit.internal.im.ConversationSettingChangeNameActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible" />
         <activity
-            android:name="com.minxing.OnlineFileActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.TaskListActivity"
+            android:name="com.minxing.kit.internal.common.OnlineFileActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -317,7 +337,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.MessageDetailActivity"
+            android:name="com.minxing.kit.internal.circle.MessageDetailActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -325,52 +345,9 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.common.GalleryGroupActivityroupActivity"
+            android:name="com.minxing.kit.internal.common.GalleryGroupActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.internal.common.SystemShareActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/mx_share_to_friends"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="image/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND_MULTIPLE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="image/*" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.minxing.kit.internal.common.LaunchComposeMailActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:icon="@drawable/mx_mail_icon"
-            android:label="@string/mx_mail_box_name"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.SENDTO" />
-
-                <data android:scheme="mailto" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-        </activity>
         <activity
             android:name="com.minxing.kit.internal.qr.CaptureActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -388,11 +365,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.internal.contact.LargeAvatarActivitytion"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.contact.LargeAvatarActivity"
+            android:name="com.minxing.kit.internal.contact.LargeAvatarActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -412,11 +385,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.minxing.kit.api.internal.TabPluginActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.minxing.kit.internal.im.SelectConversationActivitytivity"
+            android:name="com.minxing.kit.internal.im.ConversationSelecterActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -429,6 +398,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <receiver android:name="com.minxing.kit.internal.core.NetWorkStateMonitorReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.minxing.kit.internal.core.PushConnectService" />
         
     </application>
 

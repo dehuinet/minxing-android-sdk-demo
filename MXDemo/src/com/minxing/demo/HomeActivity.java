@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.minxing.client.ClientTabActivity;
 import com.minxing.kit.MXKit;
 import com.minxing.kit.MXKit.MXKitLoginListener;
 import com.minxing.kit.MXKitConfiguration;
-import com.minxing.kit.ui.MXTabActivity;
+import com.minxing.kit.api.bean.MXError;
 
 public class HomeActivity extends Activity {
 
@@ -18,8 +19,6 @@ public class HomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		// 初始化敏行
-		initMXKits();
 		
 		// 敏行启动按钮
 		TextView minxingLauncher = (TextView) findViewById(R.id.minxing_launcher);
@@ -30,18 +29,19 @@ public class HomeActivity extends Activity {
 			public void onClick(View v) {
 
 				//使用用户名密码登录敏行
-				MXKit.getInstance().loginMXKit(HomeActivity.this, "18901010101", "111111", new MXKitLoginListener() {
+				MXKit.getInstance().loginMXKit(HomeActivity.this, "3999", "111111", new MXKitLoginListener() {
 
 					@Override
 					public void onSuccess() {
-						Intent intent = new Intent(HomeActivity.this, MXTabActivity.class);
+						Intent intent = new Intent(HomeActivity.this, ClientTabActivity.class);
 						startActivity(intent);
 					}
 
+				
 					@Override
-					public void onFail() {
-						// TODO Auto-generated method stub
-
+					public void onFail(MXError error) {
+						System.out.println(""+error);
+						
 					}
 				});
 
@@ -49,12 +49,6 @@ public class HomeActivity extends Activity {
 		});
 	}
 
-	public void initMXKits() {
-
-		//初始化敏行相关配置
-		MXKitConfiguration configuration = new MXKitConfiguration.Builder(HomeActivity.this).hostOptions("http://183.129.203.74:8088",
-				"ssl://183.129.203.78:1883").build();
-		MXKit.getInstance().init(HomeActivity.this, configuration);
-	}
+	
 
 }

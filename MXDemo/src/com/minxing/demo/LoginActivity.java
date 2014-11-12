@@ -1,20 +1,11 @@
 package com.minxing.demo;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
-
-import com.minxing.kit.MXKit;
-import com.minxing.kit.MXKit.MXKitLoginListener;
-import com.minxing.kit.MXKit.MXUIListener;
-import com.minxing.kit.MXKitConfiguration;
-import com.minxing.kit.MXManager.ViewSwitchListener;
-import com.minxing.kit.ui.MXTabActivity;
 
 
 /**
