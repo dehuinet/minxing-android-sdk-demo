@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">MXKit Demo</string>
+
+    <!-- 聊天界面菜单名称 -->
+	<string name="top_right_start_conversation">发起群聊</string>
+    <string name="top_right_add_contact">添加好友</string>
+    <string name="top_right_scan">扫一扫</string>
+    <string name="top_right_circle_message">工作分享</string>
+</resources>

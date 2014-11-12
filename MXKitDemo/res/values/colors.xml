@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="white">@android:color/white</color>
+    <color name="half_alpha_black">#7f000000</color>
+    <color name="text_common_dark_grey">#707070</color>
+    <color name="text_common_lightblue">#1a85ff</color>
+    <color name="dark_gray">#707070</color>
+    <color name="bg_grey_light">#f7f7f7</color>
+    <color name="bg_grey_dark">#f5f5f5</color>
+    <color name="dark_blue">#2665B4</color>
+    <color name="black">@android:color/black</color>
+    <color name="bg_gesture_pwd_view">#004191</color>
+    <color name="lightblue_3">#2868b6</color>
+</resources>

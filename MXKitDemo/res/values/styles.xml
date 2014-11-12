@@ -1,0 +1,41 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+   <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:configChanges">keyboardHidden|orientation</item>
+    </style>
+    
+   
+   
+   <style name="title_button">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/header_bar_btn_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minWidth">55.0dip</item>
+    </style>
+    
+    <style name="menu_pop_item">
+        <item name="android:paddingTop">@dimen/pop_menu_item_padding</item>
+        <item name="android:paddingBottom">@dimen/pop_menu_item_padding</item>
+        <item name="android:layout_marginLeft">25dip</item>
+        <item name="android:layout_marginRight">25dip</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+</resources>
