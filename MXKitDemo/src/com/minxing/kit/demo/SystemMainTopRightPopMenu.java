@@ -1,5 +1,6 @@
 package com.minxing.kit.demo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
@@ -10,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
+import com.minxing.kit.MXKit;
 import com.minxing.kit.MXUIEngine;
-import com.minxing.kit.manager.ChatManager;
+import com.minxing.kit.ui.chat.ChatManager;
+import com.minxing.kit.ui.circle.CircleManager;
+import com.minxing.kit.ui.contacts.ContactManager;
 
 public class SystemMainTopRightPopMenu extends PopupWindow {
 
@@ -45,7 +49,7 @@ public class SystemMainTopRightPopMenu extends PopupWindow {
 
 			@Override
 			public void onClick(View v) {
-				chatManager.startNewChat();
+				chatManager.startNewChat((Activity) mContext);
 				dismiss();
 			}
 		});
@@ -55,7 +59,8 @@ public class SystemMainTopRightPopMenu extends PopupWindow {
 
 			@Override
 			public void onClick(View v) {
-				chatManager.addContacts();
+				ContactManager contactManager = MXUIEngine.getInstance().getContactManager();
+				contactManager.addContacts(mContext);
 				dismiss();
 			}
 		});
@@ -66,7 +71,7 @@ public class SystemMainTopRightPopMenu extends PopupWindow {
 
 			@Override
 			public void onClick(View v) {
-				chatManager.startScan();
+				MXKit.getInstance().startScan((Activity) mContext);
 				dismiss();
 			}
 		});
@@ -76,7 +81,8 @@ public class SystemMainTopRightPopMenu extends PopupWindow {
 
 			@Override
 			public void onClick(View v) {
-				chatManager.shareToCircle();
+				CircleManager circleManager = MXUIEngine.getInstance().getCircleManager();
+				circleManager.shareToCircle((Activity) mContext);
 				dismiss();
 			}
 		});

@@ -18,22 +18,18 @@ public class AppApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		
-		MXKitConfiguration config = new MXKitConfiguration.Builder(AppApplication.this).hostOptions("http://dev3.dehuinet.com:8013",
-				"ssl://dev3.dehuinet.com:1813").build();
+		MXKitConfiguration config = new MXKitConfiguration.Builder(AppApplication.this)
+		//敏行server地址和敏行推送地址
+		.hostOptions("http://dev3.dehuinet.com:8013","ssl://dev3.dehuinet.com:1813").build();
 		
 		MXKit.getInstance().init(getApplicationContext(), config);
 		
 		MXKit.getInstance().setConflictListener(new MXKitUserConflictListener() {
-			
-			@Override
-			public void onUserConflict(Context context, MXError error) {
-				/*Utils.toast(getApplicationContext(), String.valueOf(error.getMessage()), Toast.LENGTH_SHORT);
-				NotificationUtil.clearNotification(context);
 
-				Intent finishIntent = new Intent(context, ClientTabActivity.class);
-				finishIntent.setAction("finish");
-				finishIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				context.startActivity(finishIntent);*/
+			@Override
+			public void onUserConflict(MXError error) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 

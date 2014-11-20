@@ -37,13 +37,12 @@ public class LoginActivity extends Activity {
 				String username = textUsername.getText().toString();
 				String password = textPassword.getText().toString();
 				
+				//登录
 				MXKit.getInstance().loginMXKit(LoginActivity.this, username, password, new MXKitLoginListener() {
 
 					@Override
 					public void onSuccess() {
-//						launchApp(usernameString);
-//						progressDialog.dismiss();
-						
+						//登录成功后逻辑
 						Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 						startActivity(intent);
 						finish();
@@ -51,16 +50,9 @@ public class LoginActivity extends Activity {
 
 					@Override
 					public void onFail(MXError error) {
-						System.out.println(""+error);
-				/*		if (error != null) {
-							Utils.toast(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT);
-						}
-						progressDialog.dismiss();*/
+		
 					}
 				});
-				/*Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-				startActivity(intent);
-				finish();*/
 			}
 		});
 		

@@ -12,13 +12,13 @@ import android.widget.RelativeLayout;
 import android.widget.TabHost;
 
 import com.minxing.kit.MXUIEngine;
-import com.minxing.kit.manager.AppCenterManager;
-import com.minxing.kit.manager.ChatManager;
-import com.minxing.kit.manager.CircleManager;
-import com.minxing.kit.manager.ContactManager;
+import com.minxing.kit.ui.appcenter.AppCenterManager;
 import com.minxing.kit.ui.appcenter.MXAppCenterActivity;
+import com.minxing.kit.ui.chat.ChatManager;
 import com.minxing.kit.ui.chat.MXChatActivity;
+import com.minxing.kit.ui.circle.CircleManager;
 import com.minxing.kit.ui.circle.MXCircleActivity;
+import com.minxing.kit.ui.contacts.ContactManager;
 import com.minxing.kit.ui.contacts.MXContactsActivity;
 
 public class HomeActivity extends TabActivity {
